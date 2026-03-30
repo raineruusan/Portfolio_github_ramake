@@ -1,0 +1,162 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f4f4;
+}
+
+/* ANIME-STYLE HEADER WITH KOI GIF */
+.pixel-header{
+    position:relative;
+    text-align:center;
+    padding:80px;
+    font-family:'Press Start 2P', cursive;
+    color:white;
+    overflow:hidden;
+
+    /* KOI GIF as background */
+    background-image: url('https://i.pinimg.com/originals/fb/c1/cb/fbc1cb06881b19228e8c91a6a493974b.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+/* Optional semi-transparent overlay to keep text readable */
+.pixel-header::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.4);
+    z-index:1;
+}
+
+/* Glowing Anime Title */
+.pixel-header h1{
+    font-size:32px;
+    text-shadow:
+        0 0 10px #38bdf8,
+        0 0 20px #2563eb,
+        0 0 40px #60a5fa;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+    position:relative;
+    z-index:2;
+}
+
+.pixel-header p{
+    margin-top:15px;
+    position:relative;
+    z-index:2;
+}
+
+/* Moving light sweep across header */
+.pixel-header::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:200%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    animation: animeShine 6s linear infinite;
+    z-index:2;
+}
+
+/* Glowing text animation */
+@keyframes titleGlow{
+    from{
+        text-shadow:
+            0 0 10px #38bdf8,
+            0 0 20px #38bdf8,
+            0 0 40px #60a5fa;
+    }
+    to{
+        text-shadow:
+            0 0 20px #60a5fa,
+            0 0 40px #3b82f6,
+            0 0 60px #2563eb;
+    }
+}
+
+/* Moving light animation */
+@keyframes animeShine{
+    0%{
+        left:-100%;
+    }
+    100%{
+        left:100%;
+    }
+}
+
+/* NAVIGATION */
+nav{
+    background:#334155;
+    text-align:center;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:60px;
+    background:white;
+}
+
+/* SECTIONS */
+section{
+    padding:40px;
+}
+
+/* CARDS */
+.card{
+    background:white;
+    padding:20px;
+    margin:20px auto;
+    max-width:600px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    max-width:400px;
+    margin-top:10px;
+    border-radius:5px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:10px;
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.card a:hover{
+    background:#1d4ed8;
+}
+
+/* FOOTER */
+footer{
+    background:#1e293b;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
